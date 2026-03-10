@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Product Details � Imbento Masagana</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/landingpage.css">
+<link rel="stylesheet" href="css/cart.css">
+<link rel="stylesheet" href="css/product.css">
+</head>
+<body>
+
+<div class="header-sticky-wrapper">
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo"><img src="logo.png" style="height:80px;width:auto;" alt="Imbento Masagana"></a>
+    <div class="search-bar">
+      <svg width="15" height="15" fill="none" stroke="#6B6280" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input type="text" placeholder="Search Filipino-made products...">
+    </div>
+    <div class="nav-actions">
+      <a href="loginandsignup.html?mode=buyer&tab=login" class="btn-ghost">Login</a>
+      <a href="loginandsignup.html?mode=buyer&tab=register" class="btn-solid">Sign Up</a>
+      <button class="cart-btn" onclick="toggleCart()">
+        <svg width="18" height="18" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+        <div class="cart-badge" id="cartCount">0</div>
+      </button>
+    </div>
+    <button class="mobile-search-btn" onclick="toggleMobileSearch()" aria-label="Search">
+      <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+    </button>
+    <button class="hamburger-btn" onclick="toggleMobileNav()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="subnav">
+  <div class="subnav-inner">
+      <div class="cat-dropdown-wrap">
+        <button class="cat-trigger" id="catTrigger" onclick="toggleCat()">
+          ☰ &nbsp;Categories <em class="arrow">▼</em>
+        </button>
+        <div class="cat-menu" id="catMenu">
+          <div class="cat-sidebar">
+              <a href="allcategories.html" class="cat-sidebar-item all-categories-item">All Categories</a>
+            <a href="#" class="cat-sidebar-item active" onmouseenter="showPanel('healthcare')">Healthcare & Fitness</a>
+            <a href="#" class="cat-sidebar-item" onmouseenter="showPanel('pets')">Pet Products</a>
+            <a href="#" class="cat-sidebar-item" onmouseenter="showPanel('eco')">Eco Friendly & Natural</a>
+            <a href="#" class="cat-sidebar-item" onmouseenter="showPanel('fashion')">Fashion & Apparel</a>
+            <a href="#" class="cat-sidebar-item" onmouseenter="showPanel('food')">Food</a>
+            <a href="#" class="cat-sidebar-item" onmouseenter="showPanel('home')">Home & Decor</a>
+            <a href="#" class="cat-sidebar-item" onmouseenter="showPanel('beauty')">Beauty & Personal Care</a>
+            <a href="#" class="cat-sidebar-item" onmouseenter="showPanel('tools')">Tools</a>
+            <a href="#" class="cat-sidebar-item" onmouseenter="showPanel('tech')">Technologies</a>
+            <a href="#" class="cat-sidebar-item" onmouseenter="showPanel('services')">Services & e-Gifts</a>
+          </div>
+
+          <div>
+            <!-- Healthcare & Fitness -->
+            <div class="cat-panel active" id="panel-healthcare">
+              <div class="cat-panel-title">💊 Healthcare & Fitness</div>
+              <div class="cat-subcategories">
+                <a class="cat-sub-link"><span class="sub-dot"></span>Vitamins & Supplements</a>
+                <a class="cat-sub-link"><span class="sub-dot"></span>Fitness Equipment</a>
+                <a class="cat-sub-link"><span class="sub-dot"></span>Herbal Remedies</a>
+                <a class="cat-sub-link"><span class="sub-dot"></span>First Aid & Medical Supplies</a>
+                <a class="cat-sub-link"><span class="sub-dot"></span>Wellness Accessories</a>
+                <a class="cat-sub-link"><span class="sub-dot"></span>Sports Nutrition</a>
+              </div>
+              <div class="cat-featured-label">Popular Tags</div>
+              <div class="cat-featured-chips">
+                <span class="cat-chip">Organic</span>
+                <span class="cat-chip">Herbal</span>
+                <span class="cat-chip">Fitness Gear</span>
+                <span class="cat-chip">Wellness</span>
+              </div>
+            </div>
+
+            <!-- Pet Products -->
+            <div class="cat-panel" id="panel-pets">
+              <div class="cat-panel-title">🐾 Pet Products</div>
+              <div class="cat-subcategories">
+                <a class="cat-sub-link"><span class="sub-dot"></span>Pet Food & Treats</a>
+                <a class="cat-sub-link"><span class="sub-dot"></span>Pet Accessories</a>
+                <a class="cat-sub-link"><span class="sub-dot"></span>Grooming Supplies</a>
+                <a class="cat-sub-link"><span class="sub-dot"></span>Pet Health & Wellness</a>
+                <a class="cat-sub-link"><span class="sub-dot"></span>Pet Toys</a>
+                <a class="cat-sub-link"><span class="sub-dot"></span>Beds & Carriers</a>
+              </div>
+              <div class="cat-featured-label">Popular Tags</div>
+              <div class="cat-featured-chips">
+                <span class="cat-chip">Dogs</span>
+                <span class="cat-chip">Cats</span>
+                <span class="cat-chip">Natural Treats</span>
+                <span class="cat-chip">Eco-Friendly</span>
+              </div>
+            </div>
+
+            <!-- Eco Friendly & Natural -->
+            <div class="cat-panel" id="panel-eco">
+              <div class="cat-panel-title">🌿 Eco Friendly & Natural Products</div>
+              <div class="cat-subcategories">
+                <a class="cat-sub-link"><span class="sub-dot"></span>Sustainable Home</a>
+                <a class="cat-sub-link"><span class="sub-dot"></span>Reusable Products</a>
+                <a class="cat-sub-link"><span class="sub-dot"></span>Organic & Natural</a>
+                <a class="cat-sub-link"><span class="sub-dot"></span>Bamboo Products</a>
+                <a class="cat-sub-link"><span class="sub-dot"></span>Zero Waste</a>
+                <a class="cat-sub-link"><span class="sub-dot"></span>Eco Packaging</a>
+              </div>
+              <div class="cat-featured-label">Popular Tags</div>
+              <div class="cat-featured-chips">
+                <span class="cat-chip">Biodegradable</span>
+                <span class="cat-chip">Bamboo</span>
+                <span class="cat-chip">Recyclable</span>
+                <span class="cat-chip">Organic</span>
+              </div>
+            </div>
+
+            <!-- Fashion & Apparel -->
+            <div class="cat-panel" id="panel-fashion">
+              <div class="cat-panel-title">👗 Fashion & Apparel</div>
+              <div class="cat-subcategories">
+                <a class="cat-sub-link"><span class="sub-dot"></span>Women's Clothing</a>
+                <a class="cat-sub-link"><span class="sub-dot"></span>Men's Clothing</a>
+                <a class="cat-sub-link"><span class="sub-dot"></span>Bags & Totes</a>
+                <a class="cat-sub-link"><span class="sub-dot"></span>Jewelry & Accessories</a>
+                <a class="cat-sub-link"><span class="sub-dot"></span>Footwear</a>
+                <a class="cat-sub-link"><span class="sub-dot"></span>Hats & Headwear</a>
+              </div>
+              <div class="cat-featured-label">Popular Tags</div>
+              <div class="cat-featured-chips">
+                <span class="cat-chip">Handwoven</span>
+                <span class="cat-chip">Local Brands</span>
+                <span class="cat-chip">Artisan</span>
+                <span class="cat-chip">Sustainable</span>
+              </div>
+            </div>
+
+            <!-- Food -->
+            <div class="cat-panel" id="panel-food">
+              <div class="cat-panel-title">🍲 Food</div>
+              <div class="cat-subcategories">
+                <a class="cat-sub-link"><span class="sub-dot"></span>Condiments & Sauces</a>
+                <a class="cat-sub-link"><span class="sub-dot"></span>Snacks & Delicacies</a>
+                <a class="cat-sub-link"><span class="sub-dot"></span>Beverages</a>
+                <a class="cat-sub-link"><span class="sub-dot"></span>Dried Goods</a>
+                <a class="cat-sub-link"><span class="sub-dot"></span>Jams & Preserves</a>
+                <a class="cat-sub-link"><span class="sub-dot"></span>Spices & Seasonings</a>
+              </div>
+              <div class="cat-featured-label">Popular Tags</div>
+              <div class="cat-featured-chips">
+                <span class="cat-chip">Local Flavors</span>
+                <span class="cat-chip">Organic</span>
+                <span class="cat-chip">Artisan</span>
+                <span class="cat-chip">Traditional</span>
+              </div>
+            </div>
+
+            <!-- Home & Decor -->
+            <div class="cat-panel" id="panel-home">
+              <div class="cat-panel-title">🏠 Home & Decor Maintenance</div>
+              <div class="cat-subcategories">
+                <a class="cat-sub-link"><span class="sub-dot"></span>Furniture</a>
+                <a class="cat-sub-link"><span class="sub-dot"></span>Wall Art & Decor</a>
+                <a class="cat-sub-link"><span class="sub-dot"></span>Cleaning Supplies</a>
+                <a class="cat-sub-link"><span class="sub-dot"></span>Storage & Organization</a>
+                <a class="cat-sub-link"><span class="sub-dot"></span>Lighting</a>
+                <a class="cat-sub-link"><span class="sub-dot"></span>Kitchen Gadgets</a>
+              </div>
+              <div class="cat-featured-label">Popular Tags</div>
+              <div class="cat-featured-chips">
+                <span class="cat-chip">Handcrafted</span>
+                <span class="cat-chip">Eco-Friendly</span>
+                <span class="cat-chip">Bamboo</span>
+                <span class="cat-chip">Rattan</span>
+              </div>
+            </div>
+
+            <!-- Beauty & Personal Care -->
+            <div class="cat-panel" id="panel-beauty">
+              <div class="cat-panel-title">💄 Beauty & Personal Care</div>
+              <div class="cat-subcategories">
+                <a class="cat-sub-link"><span class="sub-dot"></span>Skincare</a>
+                <a class="cat-sub-link"><span class="sub-dot"></span>Hair Care</a>
+                <a class="cat-sub-link"><span class="sub-dot"></span>Makeup & Cosmetics</a>
+                <a class="cat-sub-link"><span class="sub-dot"></span>Perfume & Fragrance</a>
+                <a class="cat-sub-link"><span class="sub-dot"></span>Body Care</a>
+                <a class="cat-sub-link"><span class="sub-dot"></span>Oral Care</a>
+              </div>
+              <div class="cat-featured-label">Popular Tags</div>
+              <div class="cat-featured-chips">
+                <span class="cat-chip">Natural</span>
+                <span class="cat-chip">Organic</span>
+                <span class="cat-chip">Local Brands</span>
+                <span class="cat-chip">Cruelty-Free</span>
+              </div>
+            </div>
+
+            <!-- Tools -->
+            <div class="cat-panel" id="panel-tools">
+              <div class="cat-panel-title">🔧 Tools</div>
+              <div class="cat-subcategories">
+                <a class="cat-sub-link"><span class="sub-dot"></span>Hand Tools</a>
+                <a class="cat-sub-link"><span class="sub-dot"></span>Power Tools</a>
+                <a class="cat-sub-link"><span class="sub-dot"></span>Garden Tools</a>
+                <a class="cat-sub-link"><span class="sub-dot"></span>Safety Equipment</a>
+                <a class="cat-sub-link"><span class="sub-dot"></span>Measuring & Layout</a>
+                <a class="cat-sub-link"><span class="sub-dot"></span>Tool Storage</a>
+              </div>
+              <div class="cat-featured-label">Popular Tags</div>
+              <div class="cat-featured-chips">
+                <span class="cat-chip">DIY</span>
+                <span class="cat-chip">Professional</span>
+                <span class="cat-chip">Heavy Duty</span>
+                <span class="cat-chip">Safety</span>
+              </div>
+            </div>
+
+            <!-- Technologies -->
+            <div class="cat-panel" id="panel-tech">
+              <div class="cat-panel-title">💻 Technologies</div>
+              <div class="cat-subcategories">
+                <a class="cat-sub-link"><span class="sub-dot"></span>Gadgets & Accessories</a>
+                <a class="cat-sub-link"><span class="sub-dot"></span>Smart Devices</a>
+                <a class="cat-sub-link"><span class="sub-dot"></span>Phone Accessories</a>
+                <a class="cat-sub-link"><span class="sub-dot"></span>Computer Accessories</a>
+                <a class="cat-sub-link"><span class="sub-dot"></span>Audio & Video</a>
+                <a class="cat-sub-link"><span class="sub-dot"></span>Solar & Eco Tech</a>
+              </div>
+              <div class="cat-featured-label">Popular Tags</div>
+              <div class="cat-featured-chips">
+                <span class="cat-chip">Innovation</span>
+                <span class="cat-chip">Solar Powered</span>
+                <span class="cat-chip">Smart Home</span>
+                <span class="cat-chip">Eco Tech</span>
+              </div>
+            </div>
+
+            <!-- Services & e-Gifts -->
+            <div class="cat-panel" id="panel-services">
+              <div class="cat-panel-title">🎁 Services & e-Gift Vouchers</div>
+              <div class="cat-subcategories">
+                <a class="cat-sub-link"><span class="sub-dot"></span>Gift Cards</a>
+                <a class="cat-sub-link"><span class="sub-dot"></span>e-Vouchers</a>
+                <a class="cat-sub-link"><span class="sub-dot"></span>Digital Services</a>
+                <a class="cat-sub-link"><span class="sub-dot"></span>Subscriptions</a>
+                <a class="cat-sub-link"><span class="sub-dot"></span>Experience Vouchers</a>
+                <a class="cat-sub-link"><span class="sub-dot"></span>Custom Services</a>
+              </div>
+              <div class="cat-featured-label">Popular Tags</div>
+              <div class="cat-featured-chips">
+                <span class="cat-chip">Gift Ideas</span>
+                <span class="cat-chip">Instant Delivery</span>
+                <span class="cat-chip">Digital</span>
+                <span class="cat-chip">Special Occasion</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <a href="index.html">Home</a>
+      <a href="wishlist.html">Wishlist</a>
+      <a href="orderhistory.html">Order History</a>
+      <a href="featuredproducts.html">Featured</a>
+      <a href="bestsellers.html">Best Sellers</a>
+      <a href="newproducts.html">New Products</a>
+      <span class="verify-btn">✅ Verify Member</span>
+    </div>
+  </div>
+</div>
+
+<!-- Breadcrumb -->
+<div class="breadcrumb">
+  <a href="index.html">Home</a> �
+  <a href="#" id="breadcrumb-category">Category</a> �
+  <span id="breadcrumb-product">Product Name</span>
+</div>
+
+<!-- Product Layout -->
+<div class="product-layout">
+
+  <!-- Gallery Section -->
+  <div class="gallery">
+    <div class="main-img-container">
+      <div class="gallery-badges" id="galleryBadges">
+        <!-- Dynamic badges -->
+      </div>
+      <div class="main-img-wrap" id="mainImgWrap">
+        <img src="" alt="Product" id="mainImage" class="main-product-image">
+        <div class="zoom-lens" id="zoomLens"></div>
+      </div>
+      <div class="zoom-result" id="zoomResult"></div>
+      <div class="zoom-hint">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        Hover to zoom
+      </div>
+    </div>
+    <div class="thumb-row" id="thumbRow">
+      <!-- Dynamic thumbnails -->
+    </div>
+  </div>
+
+  <!-- Product Info Section -->
+  <div class="product-info-col">
+    <!-- Category & Stock Status -->
+    <div class="product-meta-row">
+      <a href="#" class="product-category-tag" id="productCategoryTag">Category</a>
+      <div class="stock-status in-stock" id="stockStatus">
+        <span class="stock-dot"></span>
+        <span>In Stock</span>
+      </div>
+    </div>
+
+    <h1 class="product-title" id="productTitle">Product Name</h1>
+    <p class="product-subtitle" id="productSubtitle">Subtitle</p>
+
+    <!-- Rating & Social -->
+    <div class="rating-row">
+      <div class="rating-left">
+        <div class="stars" id="productStars">★★★★★</div>
+        <div class="rating-score" id="ratingScore">0.0</div>
+        <div class="rating-count" id="ratingCount">(0 reviews)</div>
+        <div class="sold-count" id="soldCount">0 sold</div>
+      </div>
+      <div class="social-share">
+        <button class="share-btn" onclick="shareProduct('facebook')" title="Share on Facebook">
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </button>
+        <button class="share-btn" onclick="shareProduct('twitter')" title="Share on Twitter">
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
+        </button>
+        <button class="share-btn" onclick="copyProductLink()" title="Copy link">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+        </button>
+        <button class="share-btn wishlist-toggle" id="wishlistToggle" onclick="toggleWishlistProduct()" title="Add to wishlist">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Price Block -->
+    <div class="price-block">
+      <div class="price-row">
+        <div class="price-main" id="priceMain">₱0</div>
+        <div class="price-sub">
+          <div class="price-old" id="priceOld">₱0</div>
+          <div class="price-discount" id="priceDiscount">-0%</div>
+        </div>
+      </div>
+      <div class="price-save" id="priceSave">You save ₱0</div>
+    </div>
+
+    <!-- Trust Badges -->
+    <div class="trust-badges">
+      <div class="trust-badge">
+        <span class="trust-icon">✓</span>
+        <span>Verified Filipino Product</span>
+      </div>
+      <div class="trust-badge">
+        <span class="trust-icon">🛡</span>
+        <span>Buyer Protection</span>
+      </div>
+      <div class="trust-badge">
+        <span class="trust-icon">↩</span>
+        <span>Easy Returns</span>
+      </div>
+    </div>
+
+    <!-- Variants Dynamic Injection Here -->
+    <div id="variantsContainer"></div>
+
+    <!-- Quantity & Actions - Primary CTA Section -->
+    <div class="action-section" style="background: linear-gradient(135deg, #F5F3FF 0%, #EDE9FE 100%); border: 2px solid #DDD6FE; border-radius: 12px; padding: 20px; margin: 20px 0; margin-bottom: 30px;">
+      <div class="qty-row">
+        <label class="qty-label">Quantity</label>
+        <div class="qty-control">
+          <button class="qty-btn" onclick="changeQty(-1)">-</button>
+          <input type="number" class="qty-input" id="qty" value="1" min="1" onchange="validateQty()">
+          <button class="qty-btn" onclick="changeQty(1)">+</button>
+        </div>
+        <span class="qty-stock" id="qtyStock">999 pieces available</span>
+      </div>
+      <div class="action-row">
+        <button class="btn-add-cart" onclick="addToCartWrapper()">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/></svg>
+          Add to Cart
+        </button>
+        <button class="btn-buy-now" onclick="window.location='checkout.html'">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          Buy Now
+        </button>
+      </div>
+    </div>
+
+    <!-- Delivery & Services Section -->
+    <div style="height: 1px; background: #E5E7EB; margin: 20px 0;"></div>
+    <div class="delivery-box">
+      <div class="delivery-header">
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+        Delivery & Services
+      </div>
+      <div class="delivery-item">
+        <div class="delivery-icon">📦</div>
+        <div class="delivery-text">
+          <strong>Free Shipping</strong>
+          <span>On orders above ₱999 – Est. 3-5 business days</span>
+        </div>
+      </div>
+      <div class="delivery-item">
+        <div class="delivery-icon">💳</div>
+        <div class="delivery-text">
+          <strong>Cash on Delivery</strong>
+          <span>Pay when you receive your order</span>
+        </div>
+      </div>
+      <div class="delivery-item">
+        <div class="delivery-icon">🔄</div>
+        <div class="delivery-text">
+          <strong>7-Day Returns</strong>
+          <span>Free returns within 7 days of delivery</span>
+        </div>
+      </div>
+      <div class="delivery-item">
+        <div class="delivery-icon">🇵🇭</div>
+        <div class="delivery-text">
+          <strong>100% Filipino Made</strong>
+          <span>Proudly manufactured in the Philippines</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Seller Card -->
+    <div class="seller-card">
+      <div class="seller-left" style="cursor: pointer;" onclick="visitSellerPage()">
+        <div class="seller-avatar" id="sellerAvatar">S</div>
+        <div class="seller-info">
+          <div class="seller-name-row">
+            <strong id="sellerName">Seller Name</strong>
+            <span class="verified-seller-badge">✓ Verified</span>
+          </div>
+          <span class="seller-location" id="sellerLocation">📍 Location</span>
+          <div class="seller-stats">
+            <span><strong id="sellerProducts">0</strong> Products</span>
+            <span><strong id="sellerFollowers">0</strong> Followers</span>
+            <span><strong id="sellerResponseRate">0%</strong> Response</span>
+          </div>
+        </div>
+      </div>
+      <div class="seller-right">
+        <div class="seller-rating">
+          <div class="s-stars">★★★★★</div>
+          <span id="sellerRating">0.0 rating</span>
+        </div>
+        <div class="seller-actions">
+          <button class="seller-btn follow" onclick="visitSellerPage()" style="background: linear-gradient(135deg, #F5F3FF 0%, #EDE9FE 100%); border-color: #DDD6FE;">
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
+            Visit Store
+          </button>
+          <button class="seller-btn chat" onclick="chatSeller()">
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            Chat
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Product Details Section -->
+<section class="product-details-section">
+  <div class="section-container">
+    <div class="section-header">
+      <h2>Product Details</h2>
+    </div>
+    <div class="details-tabs">
+      <div class="tab-nav">
+        <button class="active" onclick="showTab('desc',this)">Description</button>
+        <button onclick="showTab('specs',this)">Specifications</button>
+      </div>
+
+      <!-- Description Tab -->
+      <div class="tab-panel active" id="tab-desc">
+        <div class="desc-content" id="descContent">
+          <h3>Product Details</h3>
+          <p>This is a high-quality Filipino made product.</p>
+        </div>
+        <div class="product-highlights">
+          <h4>Highlights</h4>
+          <ul class="highlights-list" id="highlightsList">
+            <li>Premium quality materials</li>
+            <li>Handcrafted by Filipino artisans</li>
+            <li>Eco-friendly and sustainable</li>
+            <li>Supporting local communities</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Specifications Tab -->
+      <div class="tab-panel" id="tab-specs">
+        <div class="spec-table" id="specTable">
+          <!-- Dynamic Specs -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Reviews & Q&A Section -->
+<section class="reviews-qna-section">
+  <div class="section-container">
+    <div class="section-header">
+      <h2>Customer Reviews & Q&A</h2>
+    </div>
+    <div class="reviews-qna-tabs">
+      <div class="tab-nav" id="reviewsTabNav">
+        <button class="active" onclick="showReviewTab('reviews',this)">Reviews</button>
+        <button onclick="showReviewTab('qna',this)">Q&A</button>
+      </div>
+
+      <!-- Reviews Tab -->
+      <div class="tab-panel active" id="tab-reviews">
+        <div class="reviews-summary">
+          <div class="reviews-score-block">
+            <div class="big-score" id="bigScore">5.0</div>
+            <div class="big-stars">★★★★★</div>
+            <div class="big-count" id="bigCount">Based on 0 reviews</div>
+          </div>
+          <div class="rating-bars">
+            <div class="bar-row">
+              <span class="bar-label">5 ★</span>
+              <div class="bar-track"><div class="bar-fill" style="width:80%"></div></div>
+              <span class="bar-count">80%</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-label">4 ★</span>
+              <div class="bar-track"><div class="bar-fill" style="width:15%"></div></div>
+              <span class="bar-count">15%</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-label">3 ★</span>
+              <div class="bar-track"><div class="bar-fill" style="width:3%"></div></div>
+              <span class="bar-count">3%</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-label">2 ★</span>
+              <div class="bar-track"><div class="bar-fill" style="width:1%"></div></div>
+              <span class="bar-count">1%</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-label">1 ★</span>
+              <div class="bar-track"><div class="bar-fill" style="width:1%"></div></div>
+              <span class="bar-count">1%</span>
+            </div>
+          </div>
+        </div>
+        <div class="reviews-filter">
+          <button class="filter-btn active">All</button>
+          <button class="filter-btn">With Photos</button>
+          <button class="filter-btn">5 Star</button>
+          <button class="filter-btn">4 Star</button>
+          <button class="filter-btn">3 Star</button>
+        </div>
+        <div class="reviews-list" id="reviewsList">
+          <!-- Dynamic Reviews -->
+        </div>
+        <button class="load-more-btn" id="loadMoreReviews" onclick="loadMoreReviews()">Load More Reviews</button>
+      </div>
+
+      <!-- Q&A Tab -->
+      <div class="tab-panel" id="tab-qna">
+        <div class="qna-ask">
+          <h4>Have a question?</h4>
+          <div class="ask-form">
+            <input type="text" placeholder="Type your question about this product..." id="questionInput">
+            <button onclick="submitQuestion()">Ask</button>
+          </div>
+        </div>
+        <div class="qna-list" id="qnaList">
+          <div class="qna-item">
+            <div class="q-row">
+              <span class="q-badge">Q</span>
+              <div class="q-content">
+                <p>Is this product suitable for outdoor use?</p>
+                <span class="q-meta">Asked by Juan D. � 2 days ago</span>
+              </div>
+            </div>
+            <div class="a-row">
+              <span class="a-badge">A</span>
+              <div class="a-content">
+                <p>Yes, this product is designed for both indoor and outdoor use. It's made with weather-resistant materials.</p>
+                <span class="a-meta">Answered by Seller � 1 day ago</span>
+              </div>
+            </div>
+          </div>
+          <div class="qna-item">
+            <div class="q-row">
+              <span class="q-badge">Q</span>
+              <div class="q-content">
+                <p>What is the warranty period?</p>
+                <span class="q-meta">Asked by Maria S. � 5 days ago</span>
+              </div>
+            </div>
+            <div class="a-row">
+              <span class="a-badge">A</span>
+              <div class="a-content">
+                <p>This product comes with a 1-year manufacturer warranty covering defects in materials and workmanship.</p>
+                <span class="a-meta">Answered by Seller � 4 days ago</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- You May Also Like -->
+<section class="products-section related-section">
+  <div class="section-container">
+    <div class="section-header">
+      <h2>You May Also Like</h2>
+      <a href="#" class="view-all-link">View All</a>
+    </div>
+    <div class="products-grid" id="relatedGrid">
+      <!-- Dynamic Related Products -->
+    </div>
+  </div>
+</section>
+
+<!-- Recently Viewed -->
+<section class="products-section recently-viewed-section">
+  <div class="section-container">
+    <div class="section-header">
+      <h2>Recently Viewed</h2>
+    </div>
+    <div class="products-grid" id="recentlyViewedGrid">
+      <!-- Dynamic Recently Viewed -->
+    </div>
+  </div>
+</section>
+
+<!-- Mobile Sticky Add to Cart -->
+<div class="mobile-sticky-cart">
+  <div class="sticky-price" id="stickyPrice">₱0</div>
+  <button class="sticky-add-cart" onclick="addToCartWrapper()">
+    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/></svg>
+    Add to Cart
+  </button>
+  <button class="sticky-buy-now" onclick="window.location='checkout.html'">Buy Now</button>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="logo"><img src="logowhite.png" style="height:80px;width:auto;" alt="Imbento Masagana"></a>
+        <p>Imbento Masagana is the premier online platform dedicated exclusively to Filipino-invented and locally made products. Supporting Filipino innovation, one product at a time.</p>
+        <div class="newsletter-form">
+          <input type="email" placeholder="Your email address">
+          <button>Subscribe</button>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Quick Links</h5>
+        <a href="terms.html">Terms & Conditions</a>
+        <a href="returnpolicy.html">Return Policy</a>
+        <a href="support.html">Support Policy</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="blog.html">Blog</a>
+        <a href="loginandsignup.html?mode=seller&tab=register">Become a Seller</a>
+      </div>
+      <div class="footer-col">
+        <h5>Shop</h5>
+        <a href="featuredproducts.html">Featured Products</a>
+        <a href="bestsellers.html">Best Sellers</a>
+        <a href="newproducts.html">New Arrivals</a>
+        <a href="flashdeals.html">Flash Deals</a>
+        <a href="allcategories.html">All Categories</a>
+      </div>
+      <div class="footer-col">
+        <h5>Contact Us</h5>
+        <div class="contact-item"><span class="ci">📍</span><span>Unit 503 JMJ Building Pat Antonio Sta Mesa Manila</span></div>
+        <div class="contact-item"><span class="ci">📞</span><span>(02) 8664-3183</span></div>
+        <div class="contact-item"><span class="ci">✉</span><span><a href="mailto:support@imbento.ph" class="__cf_email__">support@imbento.ph</a></span></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Imbento Masagana. All rights reserved.</p>
+      <div class="seller-links">
+        <a href="loginandsignup.html?mode=seller&tab=login">Login as Seller</a>
+        <a href="loginandsignup.html?mode=seller&tab=register">Become a Seller</a>
+        <a href="becomeaffiliate.html">Be an Affiliate Partner</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- TOAST -->
+<div id="toast" class="toast">
+    <div id="toastIcon" class="toast-icon">✓</div>
+    <div id="toastMsg" class="toast-msg">Notification</div>
+</div>
+
+<!-- Cart Sidebar -->
+<div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+<div class="cart-sidebar" id="cartSidebar">
+  <div class="cart-header">
+    <h2>Your Cart (<span id="cartCountHeader">0</span>)</h2>
+    <button class="close-cart" onclick="toggleCart()">✕</button>
+  </div>
+  <div class="cart-items" id="cartItemsContainer"></div>
+  <div class="cart-footer">
+    <div class="cart-subtotal"><span>Subtotal</span><span id="cartSubtotal">₱0</span></div>
+    <button class="checkout-btn" onclick="window.location='checkout.html'">Proceed to Checkout</button>
+    <button class="continue-btn" onclick="toggleCart()">Continue Shopping</button>
+  </div>
+</div>
+
+<script src="js/products-data.js"></script>
+<script src="js/cart-data.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/wishlist-data.js"></script>
+<script src="js/featured.js"></script>
+<script src="js/product.js"></script>
+<script src="js/hamburger.js"></script>
+<script src="js/mobile-bottom-nav.js"></script>
+</body>
+</html>
+
+

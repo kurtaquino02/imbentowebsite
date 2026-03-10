@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>All Categories — Imbento Masagana</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/landingpage.css">
+
+    <link rel="stylesheet" href="css/allcategories.css">
+</head>
+<body>
+
+<div class="header-sticky-wrapper">
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="logo"><img src="logo.png" style="height:80px;width:auto;" alt="Imbento Masagana"></a>
+      <div class="search-bar">
+        <svg width="16" height="16" fill="none" stroke="#6B6280" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        <input type="text" placeholder="Search Filipino-made products...">
+      </div>
+      <div class="nav-actions">
+        <a href="loginandsignup.html?mode=buyer&tab=login" class="btn-ghost">Login</a>
+        <a href="loginandsignup.html?mode=buyer&tab=register" class="btn-solid">Sign Up</a>
+        <button class="cart-btn" onclick="toggleCart()">
+          <svg width="18" height="18" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+          <div class="cart-badge">3</div>
+        </button>
+      </div>
+      <button class="mobile-search-btn" onclick="toggleMobileSearch()" aria-label="Search">
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      </button>
+      <button class="hamburger-btn" onclick="toggleMobileNav()" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  
+  <div class="subnav">
+    <div class="subnav-inner">
+      <div class="cat-dropdown-wrap">
+        <button class="cat-trigger" id="catTrigger" onclick="toggleCat()">
+          📦 &nbsp;Categories <em class="arrow">▼</em>
+        </button>
+        <!-- Standard Mega Menu Placeholder -->
+         <div class="cat-menu" id="catMenu" style="display:none;"></div> 
+      </div>
+      <a href="index.html">🏠 Home</a>
+      <a href="wishlist.html">❤️ Wishlist</a>
+      <a href="orderhistory.html">📦 Order History</a>
+      <a href="featuredproducts.html">⭐ Featured</a>
+      <a href="bestsellers.html">🏆 Best Sellers</a>
+      <a href="newproducts.html">✨ New Products</a>
+      <span class="verify-btn">✅ Verify Member</span>
+    </div>
+  </div>
+</div>
+
+<div class="page-header">
+    <div class="page-header-inner">
+        <div class="breadcrumb">
+            <a href="index.html">Home</a> — <span>All Categories</span>
+        </div>
+        <h1 class="page-title">Explore Categories</h1>
+        <p class="page-desc">Browse our collection of proudly Filipino-made products by category.</p>
+    </div>
+</div>
+
+<div class="main-container">
+    <div class="cat-grid">
+        <!-- Category 1: Healthcare & Fitness -->
+        <div class="cat-card" onclick="window.location='newproducts.html?cat=healthcare'">
+            <div class="cat-icon">💊</div>
+            <div class="cat-name">Healthcare & Fitness</div>
+            <div class="cat-desc">Vitamins, supplements, fitness equipment, herbal remedies, and wellness accessories for a healthier lifestyle.</div>
+            <a href="#" class="cat-link">View Products →</a>
+        </div>
+
+        <!-- Category 2: Pet Products -->
+        <div class="cat-card" onclick="window.location='newproducts.html?cat=pets'">
+            <div class="cat-icon">🐾</div>
+            <div class="cat-name">Pet Products</div>
+            <div class="cat-desc">Pet food, treats, accessories, grooming supplies, toys, and health products for your furry friends.</div>
+            <a href="#" class="cat-link">View Products →</a>
+        </div>
+
+        <!-- Category 3: Eco Friendly & Natural -->
+        <div class="cat-card" onclick="window.location='newproducts.html?cat=eco'">
+            <div class="cat-icon">🌿</div>
+            <div class="cat-name">Eco Friendly & Natural</div>
+            <div class="cat-desc">Sustainable home products, reusable items, bamboo products, and zero-waste essentials.</div>
+            <a href="#" class="cat-link">View Products →</a>
+        </div>
+
+        <!-- Category 4: Fashion & Apparel -->
+        <div class="cat-card" onclick="window.location='newproducts.html?cat=fashion'">
+            <div class="cat-icon">👗</div>
+            <div class="cat-name">Fashion & Apparel</div>
+            <div class="cat-desc">Clothing, bags, jewelry, footwear, and accessories from local Filipino designers and artisans.</div>
+            <a href="#" class="cat-link">View Products →</a>
+        </div>
+
+        <!-- Category 5: Food -->
+        <div class="cat-card" onclick="window.location='newproducts.html?cat=food'">
+            <div class="cat-icon">🍲</div>
+            <div class="cat-name">Food</div>
+            <div class="cat-desc">Local delicacies, condiments, snacks, beverages, and artisan food products from the Philippines.</div>
+            <a href="#" class="cat-link">View Products →</a>
+        </div>
+
+        <!-- Category 6: Home & Decor -->
+        <div class="cat-card" onclick="window.location='newproducts.html?cat=home'">
+            <div class="cat-icon">🏠</div>
+            <div class="cat-name">Home & Decor</div>
+            <div class="cat-desc">Handcrafted furniture, wall art, lighting, and home accessories made from local materials.</div>
+            <a href="#" class="cat-link">View Products →</a>
+        </div>
+
+        <!-- Category 7: Beauty & Personal Care -->
+        <div class="cat-card" onclick="window.location='newproducts.html?cat=beauty'">
+            <div class="cat-icon">💄</div>
+            <div class="cat-name">Beauty & Personal Care</div>
+            <div class="cat-desc">Skincare, hair care, makeup, and personal care products using natural Filipino ingredients.</div>
+            <a href="#" class="cat-link">View Products →</a>
+        </div>
+
+        <!-- Category 8: Tools -->
+        <div class="cat-card" onclick="window.location='newproducts.html?cat=tools'">
+            <div class="cat-icon">🔧</div>
+            <div class="cat-name">Tools</div>
+            <div class="cat-desc">Hand tools, power tools, garden tools, safety equipment, and tool storage solutions.</div>
+            <a href="#" class="cat-link">View Products →</a>
+        </div>
+
+        <!-- Category 9: Technologies -->
+        <div class="cat-card" onclick="window.location='newproducts.html?cat=tech'">
+            <div class="cat-icon">💻</div>
+            <div class="cat-name">Technologies</div>
+            <div class="cat-desc">Gadgets, smart devices, phone and computer accessories, and innovative eco-tech products.</div>
+            <a href="#" class="cat-link">View Products →</a>
+        </div>
+
+        <!-- Category 10: Services & e-Gifts -->
+        <div class="cat-card" onclick="window.location='newproducts.html?cat=services'">
+            <div class="cat-icon">🎁</div>
+            <div class="cat-name">Services & e-Gifts</div>
+            <div class="cat-desc">Gift cards, e-vouchers, digital services, subscriptions, and experience vouchers.</div>
+            <a href="#" class="cat-link">View Products →</a>
+        </div>
+    </div>
+</div>
+
+<!-- Site Directory Section -->
+<div class="site-directory">
+    <div class="directory-inner">
+        <h3 class="directory-title">Explore Imbento Masagana</h3>
+        <div class="directory-grid">
+            <div class="dir-col">
+                <h4>Marketplace</h4>
+                <div class="dir-list">
+                    <a href="featuredproducts.html" class="dir-link"><span>⭐</span> Featured Products</a>
+                    <a href="bestsellers.html" class="dir-link"><span>🏆</span> Best Sellers</a>
+                    <a href="newproducts.html" class="dir-link"><span>✨</span> New Arrivals</a>
+                    <a href="flashdeals.html" class="dir-link"><span>⚡</span> Flash Deals</a>
+                    <a href="allcategories.html" class="dir-link"><span>📋</span> All Categories</a>
+                </div>
+            </div>
+            
+            <div class="dir-col">
+                <h4>Top Categories</h4>
+                <div class="dir-list">
+                    <a href="#" class="dir-link"><span>💊</span> Healthcare & Fitness</a>
+                    <a href="#" class="dir-link"><span>🐾</span> Pet Products</a>
+                    <a href="#" class="dir-link"><span>🌿</span> Eco Friendly</a>
+                    <a href="#" class="dir-link"><span>👗</span> Fashion & Apparel</a>
+                    <a href="#" class="dir-link"><span>🍲</span> Food</a>
+                </div>
+            </div>
+
+            <div class="dir-col">
+                <h4>Community</h4>
+                <div class="dir-list">
+                    <a href="blog.html" class="dir-link"><span>📜</span> Our Story</a>
+                    <a href="blog.html" class="dir-link"><span>📝</span> Blog & Updates</a>
+                    <a href="loginandsignup.html?mode=seller&tab=register" class="dir-link"><span>🏪</span> Sell on Imbento</a>
+                    <a href="becomeaffiliate.html" class="dir-link"><span>🤝</span> Affiliate Program</a>
+                </div>
+            </div>
+
+            <div class="dir-col">
+                <h4>Support</h4>
+                <div class="dir-list">
+                    <a href="support.html" class="dir-link"><span>❓</span> Help Center</a>
+                    <a href="returnpolicy.html" class="dir-link"><span>🔄</span> Return Policy</a>
+                    <a href="terms.html" class="dir-link"><span>📄</span> Terms & Conditions</a>
+                    <a href="privacy.html" class="dir-link"><span>🔒</span> Privacy Policy</a>
+                    <a href="orderhistory.html" class="dir-link"><span>📦</span> Track Order</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="logo"><img src="logowhite.png" style="height:80px;width:auto;" alt="Imbento Masagana"></a>
+        <p>Imbento Masagana is the premier online platform dedicated exclusively to Filipino-invented and locally made products. Supporting Filipino innovation, one product at a time.</p>
+        <div class="newsletter-form">
+          <input type="email" placeholder="Your email address">
+          <button>Subscribe</button>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Quick Links</h5>
+        <a href="terms.html">Terms & Conditions</a>
+        <a href="returnpolicy.html">Return Policy</a>
+        <a href="support.html">Support Policy</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="blog.html">Blog</a>
+        <a href="loginandsignup.html?mode=seller&tab=register">Become a Seller</a>
+      </div>
+      <div class="footer-col">
+        <h5>Shop</h5>
+        <a href="featuredproducts.html">Featured Products</a>
+        <a href="bestsellers.html">Best Sellers</a>
+        <a href="#"">New Arrivals</a>
+        <a href="flashdeals.html">Flash Deals</a>
+        <a href="allcategories.html">All Categories</a>
+      </div>
+      <div class="footer-col">
+        <h5>Contact Us</h5>
+        <div class="contact-item"><span class="ci">📍</span><span>Unit 503 JMJ Building Pat Antonio Sta Mesa Manila</span></div>
+        <div class="contact-item"><span class="ci">📞</span><span>(02) 8664-3183</span></div>
+        <div class="contact-item"><span class="ci">✉️</span><span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="fe97909891be97939c9b908a91d08e96">[email&#160;protected]</a></span></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Imbento Masagana. All rights reserved.</p>
+      <div class="seller-links">
+        <a href="loginandsignup.html?mode=seller&tab=login">Login as Seller</a>
+        <a href="loginandsignup.html?mode=seller&tab=register">Become a Seller</a>
+        <a href="becomeaffiliate.html">Be an Affiliate Partner</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- TOAST -->
+<div id="toast" class="toast">
+    <div id="toastIcon" class="toast-icon">✔️</div>
+    <div id="toastMsg" class="toast-msg">Notification</div>
+</div>
+
+<script src="js/landingpage.js"></script>
+<script src="js/cart-data.js"></script>
+<script src="js/cart.js"></script>
+
+    <script src="js/allcategories.js"></script>
+<script src="js/hamburger.js"></script>
+<script src="js/mobile-bottom-nav.js"></script>
+</body>
+</html>

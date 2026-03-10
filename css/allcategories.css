@@ -1,0 +1,157 @@
+/* Extracted from allcategories.html */
+
+.page-header {
+    background: linear-gradient(180deg, #F9F7FF 0%, #FFFFFF 100%);
+    padding: 60px 32px;
+    margin-bottom: 40px;
+    border-bottom: 1px solid #EDE9FE;
+    text-align: center;
+}
+.page-header-inner {
+    max-width: 800px;
+    margin: 0 auto;
+}
+.breadcrumb {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 16px;
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+}
+.breadcrumb a {
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+.breadcrumb a:hover {
+    color: var(--brand);
+}
+.page-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 46px;
+    font-weight: 800;
+    color: #111827;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+}
+.page-desc {
+    font-size: 16px;
+    color: #4B5563;
+    line-height: 1.6;
+}
+.main-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 32px 80px;
+}
+
+.cat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 24px;
+}
+
+.cat-card {
+    background: white;
+    border: 1px solid #E5E7EB;
+    border-radius: 16px;
+    padding: 32px 24px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+}
+.cat-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 25px -5px rgba(91,33,182,0.1), 0 8px 10px -6px rgba(91,33,182,0.1);
+    border-color: #DDD6FE;
+    background: #ffffff;
+}
+.cat-icon {
+    font-size: 42px;
+    margin-bottom: 20px;
+    background: #F5F3FF;
+    width: 88px;
+    height: 88px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 24px;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+.cat-card:hover .cat-icon {
+    transform: scale(1.1) rotate(5deg);
+    background: #EDE9FE;
+}
+.cat-name {
+    font-family: 'Syne', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 12px;
+}
+.cat-desc {
+    font-size: 14px;
+    color: #6B7280;
+    margin-bottom: 24px;
+    line-height: 1.6;
+    flex-grow: 1;
+}
+.cat-link {
+    color: var(--brand);
+    font-weight: 700;
+    font-size: 14px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 20px;
+    border-radius: 50px;
+    background: #F5F3FF;
+    transition: all 0.2s ease;
+}
+.cat-card:hover .cat-link { 
+    background: var(--brand);
+    color: white;
+}
+
+/* === RESPONSIVE === */
+
+@media (max-width: 1024px) {
+  body { padding-bottom: 68px; }
+  .mobile-bottom-nav { display: flex; }
+  .hamburger-btn { display: flex; }
+  .mobile-search-btn { display: flex; }
+  .nav-inner .search-bar { display: none; }
+  .nav-inner .btn-ghost,
+  .nav-inner .btn-solid { display: none; }
+  .subnav { display: none; }
+  .cart-btn { display: none !important; }
+  .page-header { padding: 48px 24px; }
+  .page-title { font-size: 38px; }
+  .cat-grid { gap: 20px; }
+}
+
+@media (max-width:768px) {
+    .page-header { padding:40px 20px; margin-bottom:32px; }
+    .page-title { font-size:36px; }
+    .main-container { padding:0 20px 60px; }
+    .cat-grid { grid-template-columns:repeat(auto-fill, minmax(240px, 1fr)); gap:20px; }
+}
+
+@media (max-width:480px) {
+    .page-header { padding:32px 16px; margin-bottom:24px; }
+    .page-title { font-size:28px; }
+    .main-container { padding:0 16px 48px; }
+    .cat-grid { grid-template-columns:1fr; gap:16px; }
+    .cat-card { padding:24px 20px; flex-direction: column; align-items: center; text-align: center; } /* kept column to keep aesthetics */
+    .cat-icon { width:72px; height:72px; font-size:36px; margin-bottom: 16px; border-radius: 20px; }
+    .cat-name { font-size:20px; margin-bottom: 8px; }
+    .cat-desc { margin-bottom: 16px; font-size: 13px; }
+    .cat-link { padding: 8px 16px; font-size: 13px; }
+}

@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home — Imbento Masagana</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/landingpage.css">
+<link rel="stylesheet" href="css/cart.css">
+</head>
+<body>
+
+<!-- <div class="announce">
+  🚚 &nbsp;Free shipping on orders above ₱999 &nbsp;|&nbsp; Use code <strong>PINOY2026</strong> for 10% off your first order
+</div> -->
+
+
+<div class="header-sticky-wrapper">
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="logo"><img src="logo.png" style="height:80px;width:auto;" alt="Imbento Masagana"></a>
+      <div class="search-bar">
+        <svg width="16" height="16" fill="none" stroke="#6B6280" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        <input type="text" placeholder="Search Filipino-made products...">
+      </div>
+      <div class="nav-actions">
+        <a href="loginandsignup.html?mode=buyer&tab=login" class="btn-ghost">Login</a>
+        <a href="loginandsignup.html?mode=buyer&tab=register" class="btn-solid">Sign Up</a>
+        <button class="cart-btn" onclick="toggleCart()">
+          <svg width="18" height="18" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+          <div class="cart-badge">3</div>
+        </button>
+      </div>
+      <button class="mobile-search-btn" onclick="toggleMobileSearch()" aria-label="Search">
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      </button>
+      <button class="hamburger-btn" onclick="toggleMobileNav()" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="subnav">
+    <div class="subnav-inner">
+
+      <!-- Categories Dropdown -->
+      <div class="cat-dropdown-wrap">
+        <button class="cat-trigger" id="catTrigger" onclick="toggleCat()">
+          ☰ &nbsp;Categories <em class="arrow">▼</em>
+        </button>
+
+        <div class="cat-menu" id="catMenu">
+          <div class="cat-sidebar">
+              <a href="allcategories.html" class="cat-sidebar-item all-categories-item">All Categories</a>
+            <a href="#" class="cat-sidebar-item active" onmouseenter="showPanel('healthcare')">Healthcare & Fitness</a>
+            <a href="#" class="cat-sidebar-item" onmouseenter="showPanel('pets')">Pet Products</a>
+            <a href="#" class="cat-sidebar-item" onmouseenter="showPanel('eco')">Eco Friendly & Natural</a>
+            <a href="#" class="cat-sidebar-item" onmouseenter="showPanel('fashion')">Fashion & Apparel</a>
+            <a href="#" class="cat-sidebar-item" onmouseenter="showPanel('food')">Food</a>
+            <a href="#" class="cat-sidebar-item" onmouseenter="showPanel('home')">Home & Decor</a>
+            <a href="#" class="cat-sidebar-item" onmouseenter="showPanel('beauty')">Beauty & Personal Care</a>
+            <a href="#" class="cat-sidebar-item" onmouseenter="showPanel('tools')">Tools</a>
+            <a href="#" class="cat-sidebar-item" onmouseenter="showPanel('tech')">Technologies</a>
+            <a href="#" class="cat-sidebar-item" onmouseenter="showPanel('services')">Services & e-Gifts</a>
+          </div>
+
+          <div>
+            <!-- Healthcare & Fitness -->
+            <div class="cat-panel active" id="panel-healthcare">
+              <div class="cat-panel-title">💊 Healthcare & Fitness</div>
+              <div class="cat-subcategories">
+                <a class="cat-sub-link"><span class="sub-dot"></span>Vitamins & Supplements</a>
+                <a class="cat-sub-link"><span class="sub-dot"></span>Fitness Equipment</a>
+                <a class="cat-sub-link"><span class="sub-dot"></span>Herbal Remedies</a>
+                <a class="cat-sub-link"><span class="sub-dot"></span>First Aid & Medical Supplies</a>
+                <a class="cat-sub-link"><span class="sub-dot"></span>Wellness Accessories</a>
+                <a class="cat-sub-link"><span class="sub-dot"></span>Sports Nutrition</a>
+              </div>
+              <div class="cat-featured-label">Popular Tags</div>
+              <div class="cat-featured-chips">
+                <span class="cat-chip">Organic</span>
+                <span class="cat-chip">Herbal</span>
+                <span class="cat-chip">Fitness Gear</span>
+                <span class="cat-chip">Wellness</span>
+              </div>
+            </div>
+
+            <!-- Pet Products -->
+            <div class="cat-panel" id="panel-pets">
+              <div class="cat-panel-title">🐾 Pet Products</div>
+              <div class="cat-subcategories">
+                <a class="cat-sub-link"><span class="sub-dot"></span>Pet Food & Treats</a>
+                <a class="cat-sub-link"><span class="sub-dot"></span>Pet Accessories</a>
+                <a class="cat-sub-link"><span class="sub-dot"></span>Grooming Supplies</a>
+                <a class="cat-sub-link"><span class="sub-dot"></span>Pet Health & Wellness</a>
+                <a class="cat-sub-link"><span class="sub-dot"></span>Pet Toys</a>
+                <a class="cat-sub-link"><span class="sub-dot"></span>Beds & Carriers</a>
+              </div>
+              <div class="cat-featured-label">Popular Tags</div>
+              <div class="cat-featured-chips">
+                <span class="cat-chip">Dogs</span>
+                <span class="cat-chip">Cats</span>
+                <span class="cat-chip">Natural Treats</span>
+                <span class="cat-chip">Eco-Friendly</span>
+              </div>
+            </div>
+
+            <!-- Eco Friendly & Natural -->
+            <div class="cat-panel" id="panel-eco">
+              <div class="cat-panel-title">🌿 Eco Friendly & Natural Products</div>
+              <div class="cat-subcategories">
+                <a class="cat-sub-link"><span class="sub-dot"></span>Sustainable Home</a>
+                <a class="cat-sub-link"><span class="sub-dot"></span>Reusable Products</a>
+                <a class="cat-sub-link"><span class="sub-dot"></span>Organic & Natural</a>
+                <a class="cat-sub-link"><span class="sub-dot"></span>Bamboo Products</a>
+                <a class="cat-sub-link"><span class="sub-dot"></span>Zero Waste</a>
+                <a class="cat-sub-link"><span class="sub-dot"></span>Eco Packaging</a>
+              </div>
+              <div class="cat-featured-label">Popular Tags</div>
+              <div class="cat-featured-chips">
+                <span class="cat-chip">Biodegradable</span>
+                <span class="cat-chip">Bamboo</span>
+                <span class="cat-chip">Recyclable</span>
+                <span class="cat-chip">Organic</span>
+              </div>
+            </div>
+
+            <!-- Fashion & Apparel -->
+            <div class="cat-panel" id="panel-fashion">
+              <div class="cat-panel-title">👗 Fashion & Apparel</div>
+              <div class="cat-subcategories">
+                <a class="cat-sub-link"><span class="sub-dot"></span>Women's Clothing</a>
+                <a class="cat-sub-link"><span class="sub-dot"></span>Men's Clothing</a>
+                <a class="cat-sub-link"><span class="sub-dot"></span>Bags & Totes</a>
+                <a class="cat-sub-link"><span class="sub-dot"></span>Jewelry & Accessories</a>
+                <a class="cat-sub-link"><span class="sub-dot"></span>Footwear</a>
+                <a class="cat-sub-link"><span class="sub-dot"></span>Hats & Headwear</a>
+              </div>
+              <div class="cat-featured-label">Popular Tags</div>
+              <div class="cat-featured-chips">
+                <span class="cat-chip">Handwoven</span>
+                <span class="cat-chip">Local Brands</span>
+                <span class="cat-chip">Artisan</span>
+                <span class="cat-chip">Sustainable</span>
+              </div>
+            </div>
+
+            <!-- Food -->
+            <div class="cat-panel" id="panel-food">
+              <div class="cat-panel-title">🍲 Food</div>
+              <div class="cat-subcategories">
+                <a class="cat-sub-link"><span class="sub-dot"></span>Condiments & Sauces</a>
+                <a class="cat-sub-link"><span class="sub-dot"></span>Snacks & Delicacies</a>
+                <a class="cat-sub-link"><span class="sub-dot"></span>Beverages</a>
+                <a class="cat-sub-link"><span class="sub-dot"></span>Dried Goods</a>
+                <a class="cat-sub-link"><span class="sub-dot"></span>Jams & Preserves</a>
+                <a class="cat-sub-link"><span class="sub-dot"></span>Spices & Seasonings</a>
+              </div>
+              <div class="cat-featured-label">Popular Tags</div>
+              <div class="cat-featured-chips">
+                <span class="cat-chip">Local Flavors</span>
+                <span class="cat-chip">Organic</span>
+                <span class="cat-chip">Artisan</span>
+                <span class="cat-chip">Traditional</span>
+              </div>
+            </div>
+
+            <!-- Home & Decor -->
+            <div class="cat-panel" id="panel-home">
+              <div class="cat-panel-title">🏠 Home & Decor Maintenance</div>
+              <div class="cat-subcategories">
+                <a class="cat-sub-link"><span class="sub-dot"></span>Furniture</a>
+                <a class="cat-sub-link"><span class="sub-dot"></span>Wall Art & Decor</a>
+                <a class="cat-sub-link"><span class="sub-dot"></span>Cleaning Supplies</a>
+                <a class="cat-sub-link"><span class="sub-dot"></span>Storage & Organization</a>
+                <a class="cat-sub-link"><span class="sub-dot"></span>Lighting</a>
+                <a class="cat-sub-link"><span class="sub-dot"></span>Kitchen Gadgets</a>
+              </div>
+              <div class="cat-featured-label">Popular Tags</div>
+              <div class="cat-featured-chips">
+                <span class="cat-chip">Handcrafted</span>
+                <span class="cat-chip">Eco-Friendly</span>
+                <span class="cat-chip">Bamboo</span>
+                <span class="cat-chip">Rattan</span>
+              </div>
+            </div>
+
+            <!-- Beauty & Personal Care -->
+            <div class="cat-panel" id="panel-beauty">
+              <div class="cat-panel-title">💄 Beauty & Personal Care</div>
+              <div class="cat-subcategories">
+                <a class="cat-sub-link"><span class="sub-dot"></span>Skincare</a>
+                <a class="cat-sub-link"><span class="sub-dot"></span>Hair Care</a>
+                <a class="cat-sub-link"><span class="sub-dot"></span>Makeup & Cosmetics</a>
+                <a class="cat-sub-link"><span class="sub-dot"></span>Perfume & Fragrance</a>
+                <a class="cat-sub-link"><span class="sub-dot"></span>Body Care</a>
+                <a class="cat-sub-link"><span class="sub-dot"></span>Oral Care</a>
+              </div>
+              <div class="cat-featured-label">Popular Tags</div>
+              <div class="cat-featured-chips">
+                <span class="cat-chip">Natural</span>
+                <span class="cat-chip">Organic</span>
+                <span class="cat-chip">Local Brands</span>
+                <span class="cat-chip">Cruelty-Free</span>
+              </div>
+            </div>
+
+            <!-- Tools -->
+            <div class="cat-panel" id="panel-tools">
+              <div class="cat-panel-title">🔧 Tools</div>
+              <div class="cat-subcategories">
+                <a class="cat-sub-link"><span class="sub-dot"></span>Hand Tools</a>
+                <a class="cat-sub-link"><span class="sub-dot"></span>Power Tools</a>
+                <a class="cat-sub-link"><span class="sub-dot"></span>Garden Tools</a>
+                <a class="cat-sub-link"><span class="sub-dot"></span>Safety Equipment</a>
+                <a class="cat-sub-link"><span class="sub-dot"></span>Measuring & Layout</a>
+                <a class="cat-sub-link"><span class="sub-dot"></span>Tool Storage</a>
+              </div>
+              <div class="cat-featured-label">Popular Tags</div>
+              <div class="cat-featured-chips">
+                <span class="cat-chip">DIY</span>
+                <span class="cat-chip">Professional</span>
+                <span class="cat-chip">Heavy Duty</span>
+                <span class="cat-chip">Safety</span>
+              </div>
+            </div>
+
+            <!-- Technologies -->
+            <div class="cat-panel" id="panel-tech">
+              <div class="cat-panel-title">💻 Technologies</div>
+              <div class="cat-subcategories">
+                <a class="cat-sub-link"><span class="sub-dot"></span>Gadgets & Accessories</a>
+                <a class="cat-sub-link"><span class="sub-dot"></span>Smart Devices</a>
+                <a class="cat-sub-link"><span class="sub-dot"></span>Phone Accessories</a>
+                <a class="cat-sub-link"><span class="sub-dot"></span>Computer Accessories</a>
+                <a class="cat-sub-link"><span class="sub-dot"></span>Audio & Video</a>
+                <a class="cat-sub-link"><span class="sub-dot"></span>Solar & Eco Tech</a>
+              </div>
+              <div class="cat-featured-label">Popular Tags</div>
+              <div class="cat-featured-chips">
+                <span class="cat-chip">Innovation</span>
+                <span class="cat-chip">Solar Powered</span>
+                <span class="cat-chip">Smart Home</span>
+                <span class="cat-chip">Eco Tech</span>
+              </div>
+            </div>
+
+            <!-- Services & e-Gifts -->
+            <div class="cat-panel" id="panel-services">
+              <div class="cat-panel-title">🎁 Services & e-Gift Vouchers</div>
+              <div class="cat-subcategories">
+                <a class="cat-sub-link"><span class="sub-dot"></span>Gift Cards</a>
+                <a class="cat-sub-link"><span class="sub-dot"></span>e-Vouchers</a>
+                <a class="cat-sub-link"><span class="sub-dot"></span>Digital Services</a>
+                <a class="cat-sub-link"><span class="sub-dot"></span>Subscriptions</a>
+                <a class="cat-sub-link"><span class="sub-dot"></span>Experience Vouchers</a>
+                <a class="cat-sub-link"><span class="sub-dot"></span>Custom Services</a>
+              </div>
+              <div class="cat-featured-label">Popular Tags</div>
+              <div class="cat-featured-chips">
+                <span class="cat-chip">Gift Ideas</span>
+                <span class="cat-chip">Instant Delivery</span>
+                <span class="cat-chip">Digital</span>
+                <span class="cat-chip">Special Occasion</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+      <a href="index.html" class="active">Home</a>
+      <a href="wishlist.html">Wishlist</a>
+      <a href="orderhistory.html">Order History</a>
+      <a href="featuredproducts.html">Featured</a>
+      <a href="bestsellers.html">Best Sellers</a>
+      <a href="newproducts.html">New Products</a>
+      <span class="verify-btn">✅ Verify Member</span>
+    </div>
+  </div>
+</div>
+
+
+<div class="hero">
+  <div class="hero-main">
+    <div class="hero-content">
+      <div class="hero-tag">🔥 HOT DEAL TODAY</div>
+      <h1>Today's<br>Best Deal</h1>
+      <div class="hero-product-name">Davao Dark Chocolate</div>
+      <div class="hero-discount">80% OFF</div>
+      <div class="hero-price">
+        <span>₱900</span>
+        <strong>Only ₱180</strong>
+      </div>
+      <button class="btn-hero" onclick="window.location='product.html?id=202'">Get Yours Now →</button>
+    </div>
+    <div class="hero-product-img">
+      <img src="https://images.unsplash.com/photo-1549007994-cb92caebd54b?w=400" alt="Davao Dark Chocolate">
+    </div>
+  </div>
+
+  <div class="hero-side">
+    <div class="hero-card hero-card-1">
+      <div class="hero-card-icon">⚡</div>
+      <div class="hero-card-text">
+        <p>Limited Time Offers</p>
+        <h3>Flash Deals</h3>
+      </div>
+      <a href="flashdeals.html" class="hero-card-btn">Shop Deals →</a>
+    </div>
+    <div class="hero-card hero-card-2">
+      <div class="hero-card-icon">🏆</div>
+      <div class="hero-card-text">
+        <p>Community Picks</p>
+        <h3>Best Sellers of the Month</h3>
+      </div>
+      <a href="bestsellers.html" class="hero-card-btn">See Best Sellers →</a>
+    </div>
+    <div class="hero-card hero-card-3">
+      <div class="hero-card-icon">🇵🇭</div>
+      <div class="hero-card-text">
+        <p>Only on Imbento</p>
+        <h3>100% Filipino Made</h3>
+      </div>
+      <a href="allcategories.html" class="hero-card-btn hero-card-btn-light">Explore Products →</a>
+    </div>
+  </div>
+</div>
+
+<div class="category-strip">
+  <button class="cat-arrow cat-arrow-left" aria-label="Scroll left" onclick="scrollCatStrip(this,-1)">&#8249;</button>
+  <div class="category-inner">
+    <a href="allcategories.html" class="category-pill active"><span class="emoji">📋</span> All Categories</a>
+    <a href="#" class="category-pill"><span class="emoji">💊</span> Healthcare & Fitness</a>
+    <a href="#" class="category-pill"><span class="emoji">🐾</span> Pet Products</a>
+    <a href="#" class="category-pill"><span class="emoji">🌿</span> Eco Friendly & Natural</a>
+    <a href="#" class="category-pill"><span class="emoji">👗</span> Fashion & Apparel</a>
+    <a href="#" class="category-pill"><span class="emoji">🍲</span> Food</a>
+    <a href="#" class="category-pill"><span class="emoji">🏠</span> Home & Decor</a>
+    <a href="#" class="category-pill"><span class="emoji">💄</span> Beauty & Personal Care</a>
+    <a href="#" class="category-pill"><span class="emoji">🔧</span> Tools</a>
+    <a href="#" class="category-pill"><span class="emoji">💻</span> Technologies</a>
+    <a href="#" class="category-pill"><span class="emoji">🎁</span> Services & e-Gifts</a>
+  </div>
+  <button class="cat-arrow cat-arrow-right" aria-label="Scroll right" onclick="scrollCatStrip(this,1)">&#8250;</button>
+</div>
+
+<div class="section">
+  <div class="section-header">
+    <div>
+      <div class="section-label">Handpicked for You</div>
+      <div class="section-title">Featured Products</div>
+    </div>
+    <a href="featuredproducts.html" class="view-all">View All →</a>
+  </div>
+  <div class="product-grid">
+    <div class="product-card" style="cursor:pointer">
+      <div class="product-img" onclick="if(!event.target.closest('button')) window.location='product.html?id=101'"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400" alt="Product" style="width:100%; height:100%; object-fit:cover;"><div class="product-badge">Featured</div><button class="wishlist-btn" onclick="let e=event; e.stopPropagation(); addToWishlistWithModal({id:101, name:'Safety Wet Floor Sign', price:700, image:'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400'}, this); return false;">♡</button></div>
+      <div class="product-info" onclick="if(!event.target.closest('button')) window.location='product.html?id=101'">
+        <div class="product-cat">Home & Decor Maintenance</div>
+        <div class="product-name">Safety Wet Floor Sign</div>
+        <div class="product-seller"><span class="seller-name">🏪 SafetyPro PH</span><span class="seller-loc">📍 Quezon City</span></div>
+        <div class="stars">⭐⭐⭐⭐⭐ <span class="star-count">(28)</span></div>
+        <div class="product-footer">
+          <div><div class="price-new">₱700</div></div>
+          <button class="add-cart" onclick="let e=event; e.stopPropagation(); addToCartWithModal({id:101, name:'Safety Wet Floor Sign', price:700, image:'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400'}); return false;"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/></svg></button>
+        </div>
+      </div>
+    </div>
+    <div class="product-card" style="cursor:pointer">
+      <div class="product-img" onclick="if(!event.target.closest('button')) window.location='product.html?id=110'" style="background:linear-gradient(135deg,#F5F3FF,#DDD6FE)"><img src="https://images.unsplash.com/photo-1549007994-cb92caebd54b?w=400" alt="Product" style="width:100%; height:100%; object-fit:cover;"><div class="product-badge" style="background:#059669">Sale</div><button class="wishlist-btn" onclick="let e=event; e.stopPropagation(); addToWishlistWithModal({id:110, name:'Natural Moisturizing Bar Soap', price:250, image:'https://images.unsplash.com/photo-1549007994-cb92caebd54b?w=400'}, this); return false;">♡</button></div>
+      <div class="product-info" onclick="if(!event.target.closest('button')) window.location='product.html?id=110'">
+        <div class="product-cat">Beauty & Personal Care</div>
+        <div class="product-name">Natural Moisturizing Bar Soap</div>
+        <div class="product-seller"><span class="seller-name">🏪 PureNature</span><span class="seller-loc">📍 Batangas</span></div>
+        <div class="stars">⭐⭐⭐⭐⭐ <span class="star-count">(41)</span></div>
+        <div class="product-footer">
+          <div><div class="price-old">₱380</div><div class="price-new">₱250</div></div>
+          <button class="add-cart" onclick="let e=event; e.stopPropagation(); addToCartWithModal({id:110, name:'Natural Moisturizing Bar Soap', price:250, image:'https://images.unsplash.com/photo-1549007994-cb92caebd54b?w=400'}); return false;"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/></svg></button>
+        </div>
+      </div>
+    </div>
+    <div class="product-card" style="cursor:pointer">
+      <div class="product-img" onclick="if(!event.target.closest('button')) window.location='product.html?id=102'" style="background:linear-gradient(135deg,#ECFDF5,#D1FAE5)"><img src="https://images.unsplash.com/photo-1549007994-cb92caebd54b?w=400" alt="Product" style="width:100%; height:100%; object-fit:cover;"><div class="product-badge" style="background:var(--gold);color:var(--dark)">Best Seller</div><button class="wishlist-btn" onclick="let e=event; e.stopPropagation(); addToWishlistWithModal({id:102, name:'Herbal Muscle Relief Balm', price:450, image:'https://images.unsplash.com/photo-1549007994-cb92caebd54b?w=400'}, this); return false;">♡</button></div>
+      <div class="product-info" onclick="if(!event.target.closest('button')) window.location='product.html?id=102'">
+        <div class="product-cat">Health & Wellness</div>
+        <div class="product-name">Herbal Muscle Relief Balm</div>
+        <div class="product-seller"><span class="seller-name">🏪 HerbalPH</span><span class="seller-loc">📍 Davao City</span></div>
+        <div class="stars">⭐⭐⭐⭐⭐ <span class="star-count">(67)</span></div>
+        <div class="product-footer">
+          <div><div class="price-new">₱450</div></div>
+          <button class="add-cart" onclick="let e=event; e.stopPropagation(); addToCartWithModal({id:102, name:'Herbal Muscle Relief Balm', price:450, image:'https://images.unsplash.com/photo-1549007994-cb92caebd54b?w=400'}); return false;"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/></svg></button>
+        </div>
+      </div>
+    </div>
+    <div class="product-card" style="cursor:pointer">
+      <div class="product-img" onclick="if(!event.target.closest('button')) window.location='product.html?id=111'" style="background:linear-gradient(135deg,#FFF7ED,#FED7AA)"><img src="https://images.unsplash.com/photo-1588508065123-287b28e013da?w=400" alt="Product" style="width:100%; height:100%; object-fit:cover;"><button class="wishlist-btn" onclick="let e=event; e.stopPropagation(); addToWishlistWithModal({id:111, name:'Smart Cable Organizer', price:700, image:'https://images.unsplash.com/photo-1588508065123-287b28e013da?w=400'}, this); return false;">♡</button></div>
+      <div class="product-info" onclick="if(!event.target.closest('button')) window.location='product.html?id=111'">
+        <div class="product-cat">Technology</div>
+        <div class="product-name">Smart Cable Organizer</div>
+        <div class="product-seller"><span class="seller-name">🏪 TechEase</span><span class="seller-loc">📍 Makati City</span></div>
+        <div class="stars">⭐⭐⭐⭐⭐ <span class="star-count">(15)</span></div>
+        <div class="product-footer">
+          <div><div class="price-new">₱700</div></div>
+          <button class="add-cart" onclick="let e=event; e.stopPropagation(); addToCartWithModal({id:111, name:'Smart Cable Organizer', price:700, image:'https://images.unsplash.com/photo-1588508065123-287b28e013da?w=400'}); return false;"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/></svg></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="background:white;padding:1px 0;">
+<div class="section">
+  <div class="section-header">
+    <div>
+      <div class="section-label">Community Favorites</div>
+      <div class="section-title">Best Sellers</div>
+    </div>
+    <a href="bestsellers.html" class="view-all">View All →</a>
+  </div>
+  <div class="product-grid">
+    <div class="product-card" style="cursor:pointer">
+      <div class="product-img" onclick="if(!event.target.closest('button')) window.location='product.html?id=105'" style="background:linear-gradient(135deg,#EFF6FF,#DBEAFE)"><img src="https://images.unsplash.com/photo-1541643600914-78b084683601?w=400" alt="Product" style="width:100%; height:100%; object-fit:cover;"><div class="product-badge" style="background:var(--gold);color:var(--dark)">⭐ Top Pick</div><button class="wishlist-btn" onclick="let e=event; e.stopPropagation(); addToWishlistWithModal({id:105, name:'Men\'s Prestige Perfume', price:700, image:'https://images.unsplash.com/photo-1541643600914-78b084683601?w=400'}, this); return false;">♡</button></div>
+      <div class="product-info" onclick="if(!event.target.closest('button')) window.location='product.html?id=105'">
+        <div class="product-cat">Beauty & Personal Care</div>
+        <div class="product-name">Men's Prestige Perfume</div>
+        <div class="product-seller"><span class="seller-name">🏪 ScentManila</span><span class="seller-loc">📍 Manila</span></div>
+        <div class="stars">⭐⭐⭐⭐⭐ <span class="star-count">(132)</span></div>
+        <div class="product-footer">
+          <div><div class="price-old">₱860</div><div class="price-new">₱700</div></div>
+          <button class="add-cart" onclick="let e=event; e.stopPropagation(); addToCartWithModal({id:105, name:'Men\'s Prestige Perfume', price:700, image:'https://images.unsplash.com/photo-1541643600914-78b084683601?w=400'}); return false;"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/></svg></button>
+        </div>
+      </div>
+    </div>
+    <div class="product-card" style="cursor:pointer">
+      <div class="product-img" onclick="if(!event.target.closest('button')) window.location='product.html?id=112'" style="background:linear-gradient(135deg,#FDF2F8,#FBCFE8)"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400" alt="Product" style="width:100%; height:100%; object-fit:cover;"><button class="wishlist-btn" onclick="let e=event; e.stopPropagation(); addToWishlistWithModal({id:112, name:'Handwoven Fabric Tote Bag', price:580, image:'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400'}, this); return false;">♡</button></div>
+      <div class="product-info" onclick="if(!event.target.closest('button')) window.location='product.html?id=112'">
+        <div class="product-cat">Fashion & Accessories</div>
+        <div class="product-name">Handwoven Fabric Tote Bag</div>
+        <div class="product-seller"><span class="seller-name">🏪 WovenPh</span><span class="seller-loc">📍 Pampanga</span></div>
+        <div class="stars">⭐⭐⭐⭐⭐ <span class="star-count">(89)</span></div>
+        <div class="product-footer">
+          <div><div class="price-new">₱580</div></div>
+          <button class="add-cart" onclick="let e=event; e.stopPropagation(); addToCartWithModal({id:112, name:'Handwoven Fabric Tote Bag', price:580, image:'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400'}); return false;"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/></svg></button>
+        </div>
+      </div>
+    </div>
+    <div class="product-card" style="cursor:pointer">
+      <div class="product-img" onclick="if(!event.target.closest('button')) window.location='product.html?id=113'" style="background:linear-gradient(135deg,#F0FDF4,#BBF7D0)"><img src="https://images.unsplash.com/photo-1549007994-cb92caebd54b?w=400" alt="Product" style="width:100%; height:100%; object-fit:cover;"><div class="product-badge">New</div><button class="wishlist-btn" onclick="let e=event; e.stopPropagation(); addToWishlistWithModal({id:113, name:'Organic Calamansi Jam', price:320, image:'https://images.unsplash.com/photo-1549007994-cb92caebd54b?w=400'}, this); return false;">♡</button></div>
+      <div class="product-info" onclick="if(!event.target.closest('button')) window.location='product.html?id=113'">
+        <div class="product-cat">Food & Beverage</div>
+        <div class="product-name">Organic Calamansi Jam</div>
+        <div class="product-seller"><span class="seller-name">🏪 FarmFresh</span><span class="seller-loc">📍 Quezon Province</span></div>
+        <div class="stars">⭐⭐⭐⭐⭐ <span class="star-count">(53)</span></div>
+        <div class="product-footer">
+          <div><div class="price-new">₱320</div></div>
+          <button class="add-cart" onclick="let e=event; e.stopPropagation(); addToCartWithModal({id:113, name:'Organic Calamansi Jam', price:320, image:'https://images.unsplash.com/photo-1549007994-cb92caebd54b?w=400'}); return false;"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/></svg></button>
+        </div>
+      </div>
+    </div>
+    <div class="product-card" style="cursor:pointer">
+      <div class="product-img" onclick="if(!event.target.closest('button')) window.location='product.html?id=114'" style="background:linear-gradient(135deg,#FFF8F0,#FFE4C4)"><img src="https://images.unsplash.com/photo-1588508065123-287b28e013da?w=400" alt="Product" style="width:100%; height:100%; object-fit:cover;"><button class="wishlist-btn" onclick="let e=event; e.stopPropagation(); addToWishlistWithModal({id:114, name:'Burnay Clay Decorative Pot', price:1200, image:'https://images.unsplash.com/photo-1588508065123-287b28e013da?w=400'}, this); return false;">♡</button></div>
+      <div class="product-info" onclick="if(!event.target.closest('button')) window.location='product.html?id=114'">
+        <div class="product-cat">Art & Craft</div>
+        <div class="product-name">Burnay Clay Decorative Pot</div>
+        <div class="product-seller"><span class="seller-name">🏪 ClayWorks</span><span class="seller-loc">📍 Vigan, Ilocos Sur</span></div>
+        <div class="stars">⭐⭐⭐⭐⭐ <span class="star-count">(44)</span></div>
+        <div class="product-footer">
+          <div><div class="price-new">₱1,200</div></div>
+          <button class="add-cart" onclick="let e=event; e.stopPropagation(); addToCartWithModal({id:114, name:'Burnay Clay Decorative Pot', price:1200, image:'https://images.unsplash.com/photo-1588508065123-287b28e013da?w=400'}); return false;"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/></svg></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="section">
+  <div class="section-header">
+    <div>
+      <div class="section-label">Gift Something Special</div>
+      <div class="section-title">Services & e-Gifts</div>
+    </div>
+    <a href="#" class="view-all">View All →</a>
+  </div>
+  <div class="product-grid">
+    <div class="product-card" style="cursor:pointer">
+      <div class="product-img" onclick="if(!event.target.closest('button')) window.location='product.html?id=201'" style="background:linear-gradient(135deg,#FFF7ED,#FFEDD5)"><img src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=400" alt="Product" style="width:100%; height:100%; object-fit:cover;"><div class="product-badge" style="background:#F59E0B;color:white">🎁 Gift</div><button class="wishlist-btn" onclick="let e=event; e.stopPropagation(); addToWishlistWithModal({id:201, name:'Imbento Gift Card ₱500', price:500, image:'https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=400'}, this); return false;">♡</button></div>
+      <div class="product-info" onclick="if(!event.target.closest('button')) window.location='product.html?id=201'">
+        <div class="product-cat">Services & e-Gifts</div>
+        <div class="product-name">Imbento Gift Card ₱500</div>
+        <div class="product-seller"><span class="seller-name">🏪 Imbento Official</span><span class="seller-loc">📍 Nationwide</span></div>
+        <div class="stars">⭐⭐⭐⭐⭐ <span class="star-count">(156)</span></div>
+        <div class="product-footer">
+          <div><div class="price-new">₱500</div></div>
+          <button class="add-cart" onclick="let e=event; e.stopPropagation(); addToCartWithModal({id:201, name:'Imbento Gift Card ?500', price:500, image:'https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=400'}); return false;"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/></svg></button>
+        </div>
+      </div>
+    </div>
+    <div class="product-card" style="cursor:pointer">
+      <div class="product-img" onclick="if(!event.target.closest('button')) window.location='product.html?id=202'" style="background:linear-gradient(135deg,#F0FDF4,#DCFCE7)"><img src="https://images.unsplash.com/photo-1540555700478-4be289fbec6d?w=400" alt="Product" style="width:100%; height:100%; object-fit:cover;"><div class="product-badge" style="background:#10B981;color:white">⚡ Instant</div><button class="wishlist-btn" onclick="let e=event; e.stopPropagation(); addToWishlistWithModal({id:202, name:'Spa & Wellness e-Voucher', price:1500, image:'https://images.unsplash.com/photo-1540555700478-4be289fbec6d?w=400'}, this); return false;">♡</button></div>
+      <div class="product-info" onclick="if(!event.target.closest('button')) window.location='product.html?id=202'">
+        <div class="product-cat">Services & e-Gifts</div>
+        <div class="product-name">Spa & Wellness e-Voucher</div>
+        <div class="product-seller"><span class="seller-name">🏪 ZenSpa PH</span><span class="seller-loc">📍 Metro Manila</span></div>
+        <div class="stars">⭐⭐⭐⭐⭐ <span class="star-count">(87)</span></div>
+        <div class="product-footer">
+          <div><div class="price-new">₱1,500</div></div>
+          <button class="add-cart" onclick="let e=event; e.stopPropagation(); addToCartWithModal({id:202, name:'Spa & Wellness e-Voucher', price:1500, image:'https://images.unsplash.com/photo-1540555700478-4be289fbec6d?w=400'}); return false;"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/></svg></button>
+        </div>
+      </div>
+    </div>
+    <div class="product-card" style="cursor:pointer">
+      <div class="product-img" onclick="if(!event.target.closest('button')) window.location='product.html?id=203'" style="background:linear-gradient(135deg,#EFF6FF,#DBEAFE)"><img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=400" alt="Product" style="width:100%; height:100%; object-fit:cover;"><div class="product-badge" style="background:#3B82F6;color:white">📦 Monthly</div><button class="wishlist-btn" onclick="let e=event; e.stopPropagation(); addToWishlistWithModal({id:203, name:'Pinoy Snacks Subscription Box', price:999, image:'https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=400'}, this); return false;">♡</button></div>
+      <div class="product-info" onclick="if(!event.target.closest('button')) window.location='product.html?id=203'">
+        <div class="product-cat">Services & e-Gifts</div>
+        <div class="product-name">Pinoy Snacks Subscription Box</div>
+        <div class="product-seller"><span class="seller-name">🏪 SnackBox PH</span><span class="seller-loc">📍 Nationwide</span></div>
+        <div class="stars">⭐⭐⭐⭐⭐ <span class="star-count">(63)</span></div>
+        <div class="product-footer">
+          <div><div class="price-new">₱999/mo</div></div>
+          <button class="add-cart" onclick="let e=event; e.stopPropagation(); addToCartWithModal({id:203, name:'Pinoy Snacks Subscription Box', price:999, image:'https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=400'}); return false;"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/></svg></button>
+        </div>
+      </div>
+    </div>
+    <div class="product-card" style="cursor:pointer">
+      <div class="product-img" onclick="if(!event.target.closest('button')) window.location='product.html?id=204'" style="background:linear-gradient(135deg,#FDF4FF,#F5D0FE)"><img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=400" alt="Product" style="width:100%; height:100%; object-fit:cover;"><div class="product-badge" style="background:#A855F7;color:white">✨ Experience</div><button class="wishlist-btn" onclick="let e=event; e.stopPropagation(); addToWishlistWithModal({id:204, name:'Culinary Class Experience', price:2500, image:'https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=400'}, this); return false;">♡</button></div>
+      <div class="product-info" onclick="if(!event.target.closest('button')) window.location='product.html?id=204'">
+        <div class="product-cat">Services & e-Gifts</div>
+        <div class="product-name">Culinary Class Experience</div>
+        <div class="product-seller"><span class="seller-name">🏪 ChefMasters PH</span><span class="seller-loc">📍 Makati City</span></div>
+        <div class="stars">⭐⭐⭐⭐⭐ <span class="star-count">(42)</span></div>
+        <div class="product-footer">
+          <div><div class="price-new">₱2,500</div></div>
+          <button class="add-cart" onclick="let e=event; e.stopPropagation(); addToCartWithModal({id:204, name:'Culinary Class Experience', price:2500, image:'https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=400'}); return false;"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/></svg></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Top Sellers Section -->
+<div class="section sellers-section">
+  <div class="section-header">
+    <div>
+      <div class="section-label">Meet Our Merchants</div>
+      <div class="section-title">Top Filipino Sellers</div>
+    </div>
+    <a href="allsellers.html" class="view-all">View All Sellers →</a>
+  </div>
+  <div class="sellers-grid">
+    <a href="seller.html?name=SafetyPro%20PH" class="seller-card">
+      <div class="seller-card-header">
+        <div class="seller-avatar-wrap">
+          <div class="seller-avatar">SP</div>
+          <span class="seller-verified-badge">✓</span>
+        </div>
+        <div class="seller-quick-stats">
+          <span class="seller-rating">4.9</span>
+          <span class="seller-followers">2.1K followers</span>
+        </div>
+      </div>
+      <div class="seller-card-body">
+        <div class="seller-name-row">
+          <h3 class="seller-card-name">SafetyPro PH</h3>
+        </div>
+        <p class="seller-card-tagline">Premium safety equipment for homes and businesses</p>
+        <div class="seller-card-meta">
+          <span>Quezon City</span>
+          <span>500+ sold</span>
+        </div>
+      </div>
+      <div class="seller-card-footer">
+        <span class="seller-visit-btn">Visit Store →</span>
+      </div>
+    </a>
+    <a href="seller.html?name=Herbal%20Haven" class="seller-card">
+      <div class="seller-card-header">
+        <div class="seller-avatar-wrap">
+          <div class="seller-avatar">HH</div>
+          <span class="seller-verified-badge">✓</span>
+        </div>
+        <div class="seller-quick-stats">
+          <span class="seller-rating">4.8</span>
+          <span class="seller-followers">3.5K followers</span>
+        </div>
+      </div>
+      <div class="seller-card-body">
+        <div class="seller-name-row">
+          <h3 class="seller-card-name">Herbal Haven</h3>
+        </div>
+        <p class="seller-card-tagline">Natural remedies & organic wellness products</p>
+        <div class="seller-card-meta">
+          <span>Laguna</span>
+          <span>2.4K sold</span>
+        </div>
+      </div>
+      <div class="seller-card-footer">
+        <span class="seller-visit-btn">Visit Store →</span>
+      </div>
+    </a>
+    <a href="seller.html?name=TechPinoy%20Gadgets" class="seller-card">
+      <div class="seller-card-header">
+        <div class="seller-avatar-wrap">
+          <div class="seller-avatar">TP</div>
+          <span class="seller-verified-badge">✓</span>
+        </div>
+        <div class="seller-quick-stats">
+          <span class="seller-rating">4.7</span>
+          <span class="seller-followers">1.8K followers</span>
+        </div>
+      </div>
+      <div class="seller-card-body">
+        <div class="seller-name-row">
+          <h3 class="seller-card-name">TechPinoy Gadgets</h3>
+        </div>
+        <p class="seller-card-tagline">Filipino-designed tech accessories & smart devices</p>
+        <div class="seller-card-meta">
+          <span>Makati City</span>
+          <span>1.2K sold</span>
+        </div>
+      </div>
+      <div class="seller-card-footer">
+        <span class="seller-visit-btn">Visit Store →</span>
+      </div>
+    </a>
+    <a href="seller.html?name=Bamboo%20Crafts%20Co" class="seller-card">
+      <div class="seller-card-header">
+        <div class="seller-avatar-wrap">
+          <div class="seller-avatar">BC</div>
+          <span class="seller-verified-badge">✓</span>
+        </div>
+        <div class="seller-quick-stats">
+          <span class="seller-rating">4.9</span>
+          <span class="seller-followers">4.2K followers</span>
+        </div>
+      </div>
+      <div class="seller-card-body">
+        <div class="seller-name-row">
+          <h3 class="seller-card-name">Bamboo Crafts Co</h3>
+        </div>
+        <p class="seller-card-tagline">Handwoven bamboo furniture & eco-friendly home decor</p>
+        <div class="seller-card-meta">
+          <span>Cebu</span>
+          <span>3.1K sold</span>
+        </div>
+      </div>
+      <div class="seller-card-footer">
+        <span class="seller-visit-btn">Visit Store →</span>
+      </div>
+    </a>
+  </div>
+</div>
+
+<div class="membership">
+  <div class="membership-inner">
+    <div class="membership-text">
+      <h2>Become a Member of<br>Imbento Masagana</h2>
+      <p>Unlock exclusive deals, early access & rewards</p>
+    </div>
+    <div class="membership-perks">
+      <div class="perk">
+        <div class="perk-icon">🏷️</div>
+        <strong style="color:white;font-size:13px">Exclusive Deals</strong>
+        <span>Members-only prices</span>
+      </div>
+      <div class="perk">
+        <div class="perk-icon">🚀</div>
+        <strong style="color:white;font-size:13px">Early Access</strong>
+        <span>First to new drops</span>
+      </div>
+      <div class="perk">
+        <div class="perk-icon">🎁</div>
+        <strong style="color:white;font-size:13px">Free Rewards</strong>
+        <span>Points on every order</span>
+      </div>
+    </div>
+    <a href="loginandsignup.html?mode=buyer&tab=register" class="btn-join" style="text-decoration:none; display:inline-flex; align-items:center; justify-content:center;">Join Free →</a>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-header">
+    <div>
+      <div class="section-label">Updates & Stories</div>
+      <div class="section-title">From the Blog</div>
+    </div>
+    <a href="blog.html" class="view-all">View All →</a>
+  </div>
+  <div class="blog-grid">
+    <a href="blog.html" class="blog-card" style="text-decoration:none; color:inherit; display:flex; flex-direction:column;">
+      <div class="blog-img" style="background:linear-gradient(135deg,#2D1B69,var(--brand));aspect-ratio:16/8">🇵🇭<div class="blog-date-tag"><span class="day">26</span>Feb</div></div>
+      <div class="blog-content">
+        <div class="blog-cat">Filipino Innovation</div>
+        <div class="blog-title">Top Filipino Products Changing the Market in 2026</div>
+        <div class="blog-excerpt">Discover how local inventors and entrepreneurs are making waves not just in the Philippines but across Southeast Asia with their groundbreaking products.</div>
+      </div>
+    </a>
+    <a href="blog.html" class="blog-card" style="text-decoration:none; color:inherit; display:flex; flex-direction:column;">
+      <div class="blog-img" style="background:linear-gradient(135deg,#0F172A,#1E3A5F)">🔍<div class="blog-date-tag"><span class="day">26</span>Feb</div></div>
+      <div class="blog-content">
+        <div class="blog-cat">Tips & Tricks</div>
+        <div class="blog-title">How to Spot Quality Filipino-Made Products</div>
+        <div class="blog-excerpt">A guide to identifying authentic, high-quality locally made goods when shopping online.</div>
+      </div>
+    </a>
+    <a href="blog.html" class="blog-card" style="text-decoration:none; color:inherit; display:flex; flex-direction:column;">
+      <div class="blog-img" style="background:linear-gradient(135deg,#1A1033,#5B21B6)">💬<div class="blog-date-tag"><span class="day">26</span>Feb</div></div>
+      <div class="blog-content">
+        <div class="blog-cat">Seller Stories</div>
+        <div class="blog-title">From Garage to Market: Seller Success Stories</div>
+        <div class="blog-excerpt">Meet the passionate Filipino inventors who turned their ideas into thriving businesses on Imbento.</div>
+      </div>
+    </a>
+  </div>
+</div>
+
+<div class="trust">
+  <div class="trust-inner">
+    <div class="trust-card">
+      <div class="trust-icon">🛡️</div>
+      <div class="trust-text">
+        <h4>Buyer Protection</h4>
+        <p>Every purchase is protected. Get a full refund if your item doesn't arrive or isn't as described.</p>
+      </div>
+    </div>
+    <div class="trust-card">
+      <div class="trust-icon">🔄</div>
+      <div class="trust-text">
+        <h4>Easy Returns</h4>
+        <p>Changed your mind? Return within 7 days for a no-hassle refund or exchange.</p>
+      </div>
+    </div>
+    <div class="trust-card">
+      <div class="trust-icon">📞</div>
+      <div class="trust-text">
+        <h4>24/7 Support</h4>
+        <p>Our dedicated support team is always ready to assist you, anytime you need help.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Site Directory Section -->
+
+
+<div class="site-directory">
+    <div class="directory-inner">
+        <h3 class="directory-title">Explore Imbento Masagana</h3>
+        <div class="directory-grid">
+            <div class="dir-col">
+                <h4>Marketplace</h4>
+                <div class="dir-list">
+                    <a href="featuredproducts.html" class="dir-link"><span>⭐</span> Featured Products</a>
+                    <a href="bestsellers.html" class="dir-link"><span>🏆</span> Best Sellers</a>
+                    <a href="newproducts.html" class="dir-link"><span>✨</span> New Arrivals</a>
+                    <a href="flashdeals.html" class="dir-link"><span>⚡</span> Flash Deals</a>
+                    <a href="allcategories.html" class="dir-link"><span>📋</span> All Categories</a>
+                </div>
+            </div>
+            
+            <div class="dir-col">
+                <h4>Top Categories</h4>
+                <div class="dir-list">
+                    <a href="#" class="dir-link"><span>💊</span> Healthcare & Fitness</a>
+                    <a href="#" class="dir-link"><span>🌿</span> Eco Friendly</a>
+                    <a href="#" class="dir-link"><span>👗</span> Fashion & Apparel</a>
+                    <a href="#" class="dir-link"><span>💻</span> Technologies</a>
+                    <a href="#" class="dir-link"><span>🎁</span> e-Gift Vouchers</a>
+                </div>
+            </div>
+
+            <div class="dir-col">
+                <h4>Community</h4>
+                <div class="dir-list">
+                    <a href="blog.html" class="dir-link"><span>📜</span> Our Story</a>
+                    <a href="blog.html" class="dir-link"><span>📝</span> Blog & Updates</a>
+                    <a href="loginandsignup.html?mode=seller&tab=register" class="dir-link"><span>🏪</span> Sell on Imbento</a>
+                    <a href="becomeaffiliate.html" class="dir-link"><span>🤝</span> Affiliate Program</a>
+                </div>
+            </div>
+
+            <div class="dir-col">
+                <h4>Support</h4>
+                <div class="dir-list">
+                    <a href="support.html" class="dir-link"><span>❓</span> Help Center</a>
+                    <a href="returnpolicy.html" class="dir-link"><span>🔄</span> Return Policy</a>
+                    <a href="terms.html" class="dir-link"><span>📄</span> Terms & Conditions</a>
+                    <a href="privacy.html" class="dir-link"><span>🔒</span> Privacy Policy</a>
+                    <a href="orderhistory.html" class="dir-link"><span>📦</span> Track Order</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="logo"><img src="logowhite.png" style="height:80px;width:auto;" alt="Imbento Masagana"></a>
+        <p>Imbento Masagana is the premier online platform dedicated exclusively to Filipino-invented and locally made products. Supporting Filipino innovation, one product at a time.</p>
+        <div class="newsletter-form">
+          <input type="email" placeholder="Your email address">
+          <button>Subscribe</button>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Quick Links</h5>
+        <a href="terms.html">Terms & Conditions</a>
+        <a href="returnpolicy.html">Return Policy</a>
+        <a href="support.html">Support Policy</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="blog.html">Blog</a>
+        <a href="loginandsignup.html?mode=seller&tab=register">Become a Seller</a>
+      </div>
+      <div class="footer-col">
+        <h5>Shop</h5>
+        <a href="featuredproducts.html">Featured Products</a>
+        <a href="bestsellers.html">Best Sellers</a>
+        <a href="newproducts.html">New Arrivals</a>
+        <a href="flashdeals.html">Flash Deals</a>
+        <a href="allcategories.html">All Categories</a>
+      </div>
+      <div class="footer-col">
+        <h5>Contact Us</h5>
+        <div class="contact-item"><span class="ci">📍</span><span>Unit 503 JMJ Building Pat Antonio Sta Mesa Manila</span></div>
+        <div class="contact-item"><span class="ci">📞</span><span>(02) 8664-3183</span></div>
+        <div class="contact-item"><span class="ci">✉️</span><span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="fe97909891be97939c9b908a91d08e96">[email&#160;protected]</a></span></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Imbento Masagana. All rights reserved.</p>
+      <div class="seller-links">
+        <a href="loginandsignup.html?mode=seller&tab=login">Login as Seller</a>
+        <a href="loginandsignup.html?mode=seller&tab=register">Become a Seller</a>
+        <a href="becomeaffiliate.html">Be an Affiliate Partner</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Cart Sidebar -->
+<div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+<div class="cart-sidebar" id="cartSidebar">
+  <div class="cart-header">
+    <h2>Your Cart (<span id="cartCountHeader">3</span>)</h2>
+    <button class="close-cart" onclick="toggleCart()">✕</button>
+  </div>
+  
+  <div class="cart-items" id="cartItemsContainer">
+      <!-- Populated by js/cart.js -->
+  </div>
+
+  <div class="cart-footer">
+    <div class="promo-box">
+      <input type="text" placeholder="Promo / Referral Code" id="promoInput">
+      <button onclick="applyPromo()">Apply</button>
+    </div>
+    <div class="cart-subtotal">
+      <span>Subtotal</span>
+      <span id="cartSubtotal">₱2,550</span>
+    </div>
+    <button class="checkout-btn" onclick="window.location='checkout.html'">Proceed to Checkout</button>
+    <button class="continue-btn" onclick="toggleCart()">Continue Shopping</button>
+  </div>
+</div>
+
+<!-- ADDED TO CART MODAL -->
+<div class="modal-overlay" id="addToCartModal">
+  <div class="modal">
+    <div class="modal-icon">✓</div>
+    <h3>Added to Cart!</h3>
+    <p>This item has been successfully added to your shopping cart.</p>
+    <div class="modal-btns">
+      <button class="modal-btn secondary" onclick="closeCartModal()">Continue Shopping</button>
+      <button class="modal-btn primary" onclick="window.location='cart.html'">View Cart</button>
+    </div>
+  </div>
+</div>
+
+<!-- ADDED TO WISHLIST MODAL -->
+<div class="modal-overlay" id="addToWishlistModal">
+  <div class="modal">
+    <div class="modal-icon" style="color:#F43F5E; background:#FFE4E6">♥</div>
+    <h3>Added to Wishlist!</h3>
+    <p>This item has been saved to your wishlist.</p>
+    <div class="modal-btns">
+      <button class="modal-btn secondary" onclick="closeWishlistModal()">Continue Shopping</button>
+      <button class="modal-btn primary" onclick="window.location='wishlist.html'" style="background:#F43F5E">View Wishlist</button>
+    </div>
+  </div>
+</div>
+
+<!-- TOAST Notification -->
+<div id="toast" class="toast">
+    <div id="toastIcon" class="toast-icon">✔️</div>
+    <div id="toastMsg" class="toast-msg">Item added to cart!</div>
+</div>
+
+<script src="js/cart-data.js"></script>
+<script src="js/cart.js"></script>
+
+<script src="js/landingpage.js"></script>
+<script src="js/hamburger.js"></script>
+<script src="js/mobile-bottom-nav.js"></script>
+</body>
+</html>
+

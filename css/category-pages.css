@@ -1,0 +1,190 @@
+/* Category Pages Common Styles */
+
+.page-header {
+    background: var(--surface);
+    padding: 40px 32px;
+    margin-bottom: 0; /* Removed margin to connect with strip */
+    border-bottom: 1px solid #EDE9FE;
+}
+.category-strip {
+    background: #fff;
+    border-bottom: 1px solid #F3F4F6;
+    padding: 16px 0;
+    position: sticky;
+    top: 80px; /* Below sticky header */
+    z-index: 95;
+    margin-bottom: 40px;
+}
+.category-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 32px;
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+.category-inner::-webkit-scrollbar { display: none; }
+
+.category-pill {
+    white-space: nowrap;
+    padding: 10px 20px;
+    border-radius: 50px;
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    text-decoration: none;
+    transition: all 0.2s;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.category-pill:hover {
+    background: #F1F5F9;
+    border-color: #CBD5E1;
+}
+.category-pill.active {
+    background: var(--brand);
+    color: white;
+    border-color: var(--brand);
+}
+.category-pill .emoji { font-size: 16px; }
+
+.page-header-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+.breadcrumb {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 16px;
+}
+.breadcrumb a {
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+.breadcrumb a:hover {
+    color: var(--brand);
+}
+.page-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 42px;
+    font-weight: 800;
+    color: var(--text);
+    margin-bottom: 12px;
+}
+.page-desc {
+    color: var(--muted);
+    max-width: 600px;
+    line-height: 1.6;
+}
+.main-grid {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 32px 80px;
+    min-height: 60vh;
+}
+.filter-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 32px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #F0EAFF;
+}
+.result-count {
+    font-weight: 600;
+    color: var(--text);
+}
+.sort-select {
+    padding: 8px 16px;
+    border: 1.5px solid #DDD6FE;
+    border-radius: 8px;
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text);
+    outline: none;
+    cursor: pointer;
+}
+/* Category Section Styles */
+.category-section {
+    margin-bottom: 60px;
+}
+.category-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 24px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #F3F4F6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.category-title a {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--brand);
+    text-decoration: none;
+}
+.category-title a:hover {
+    text-decoration: underline;
+}
+
+/* Make products smaller on this page (5 columns instead of 4) */
+.product-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)) !important;
+    gap: 16px !important;
+}
+
+/* Adjust card internal padding/sizing for smaller cards */
+.product-card .product-info {
+    padding: 12px !important;
+}
+.product-card .product-name {
+    font-size: 14px !important;
+}
+.product-card .price-new {
+    font-size: 16px !important;
+}
+
+/* ═══════ RESPONSIVE ═══════ */
+
+@media (max-width: 1024px) {
+  body { padding-bottom: 68px; }
+  .mobile-bottom-nav { display: flex; }
+  .hamburger-btn { display: flex; }
+  .mobile-search-btn { display: flex; }
+  .nav-inner .search-bar { display: none; }
+  .nav-inner .btn-ghost,
+  .nav-inner .btn-solid { display: none; }
+  .subnav { display: none; }
+  .cart-btn { display: none !important; }
+  .page-header { padding: 32px 24px; }
+  .page-title { font-size: 36px; }
+}
+
+@media (max-width:768px) {
+  .page-header { padding:28px 16px; }
+  .page-title { font-size:30px; }
+  .category-inner { padding:0 16px; }
+  .main-grid { padding:0 16px 48px; }
+  .filter-bar { flex-direction:column; align-items:flex-start; gap:12px; }
+  .category-section { margin-bottom:40px; }
+  .category-title { font-size:22px; flex-direction:column; align-items:flex-start; gap:8px; }
+}
+
+@media (max-width:480px) {
+  .page-header { padding:20px 12px; }
+  .page-title { font-size:24px; }
+  .main-grid { padding:0 12px 36px; }
+  .category-title { font-size:20px; }
+  .category-inner { padding:0 12px; }
+}
